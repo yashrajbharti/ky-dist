@@ -1,0 +1,123 @@
+
+
+
+nav.navf {
+  width: 100px;
+  height: 100px;
+  margin: 50px auto 0;
+  position: absolute;
+  overflow: hidden;
+  transition: 200ms ease-in-out;
+  bottom: 40px;
+  left:10px;
+}
+nav.navf ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+nav.navf ul:after {
+  content: '+';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 80px;
+  top: 13px;
+  left: 29px;
+  transition: 300ms ease-in-out;
+  opacity: 1;
+}
+nav.navf ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 40%;
+  height: 40%;
+  background: #000;
+
+  position: absolute;
+  transition: 200ms ease-in-out;
+}
+nav.navf ul li i {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  color: white;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+
+}
+nav.navf ul li i.fa {
+  font-size: 15px;
+}
+nav.navf ul li:first-child {
+  top: 20%;
+  left: 20%;
+  background-position: center;
+  border-top-left-radius: 10px;
+}
+nav.navf ul li:nth-child(2) {
+  top: 20%;
+  left: 50%;
+  border-top-right-radius: 10px;
+}
+nav.navf ul li:nth-child(3) {
+  top: 50%;
+  left: 20%;
+  border-bottom-left-radius: 10px;
+}
+nav.navf ul li:nth-child(4) {
+  top: 50%;
+  left: 50%;
+  border-bottom-right-radius: 10px;
+}
+nav.navf:hover {
+  transform: rotate(45deg);
+}
+nav.navf:hover ul:after {
+  opacity: 0;
+}
+nav.navf:hover ul li {
+  border: solid 3px #eee;
+  transform: rotate(-45deg);
+}
+nav.navf:hover ul li i {
+  opacity: 0.5;
+}
+nav.navf:hover ul li:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+nav.navf:hover ul li:hover i {
+  opacity: 1;
+  transform: rotate(-45deg);
+}
+nav.navf:hover ul li:first-child {
+  top: 10%;
+  left: 10%;
+  border-radius: 50%;
+}
+nav.navf:hover ul li:nth-child(2) {
+  top: 10%;
+  left: 60%;
+  border-radius: 50%;
+}
+nav.navf:hover ul li:nth-child(3) {
+  top: 60%;
+  left: 10%;
+  border-radius: 50%;
+}
+nav.navf:hover ul li:nth-child(4) {
+  top: 60%;
+  left: 60%;
+  border-radius: 50%;
+}
+@media screen and (max-width: 768px)  {
+  nav.navf{
+    margin-bottom: 5%;
+  }
+}

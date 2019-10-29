@@ -1,0 +1,206 @@
+div#DD{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+        -webkit-tap-highlight-color: transparent;   /* best code to remove _blue highlight */
+          outline: none;
+
+}
+
+
+.swiper-button-prev{
+  content: url(arrow.svg);
+  transform: rotate(180deg);
+}
+.swiper-button-next{
+  content: url(arrow.svg);
+}
+.swiper-button-prev:hover{
+  content: url(arrowwhite.svg);
+}
+.swiper-button-next:hover{
+  content: url(arrowwhite.svg);
+}
+
+div#DDD {
+  background-image:linear-gradient(#240b36 , #302b63) ;
+      height: 100vh;
+      overflow-y: hidden;
+
+     font-size: 14px;
+     color:#000;
+     margin: 0;
+     padding: 0;
+   }
+   .Testimonials-h1{
+     position: absolute;
+     text-align: center;
+     left: 0;
+     right: 0;
+     margin: auto;
+     margin-top:60px;
+     color: #fff;
+   }
+   .swiper-container {
+
+     width: 100%;
+     padding-top: 160px;
+     padding-bottom: 50px;
+   }
+   .swiper-slide {
+     background-position: center;
+     background-size: cover;
+     width: 500px;
+     height: 550px;
+     background: #fff;
+     border: 15px solid #fff;
+     border-radius: 10px;
+   }
+   .swiper-slide .imgBx {
+     width: 100%;
+     height: 370px;
+     overflow: hidden;
+     border-radius: 10px;
+   }
+  .swiper-slide .imgBx img {
+    width:500px;
+    height: 370px;
+    object-fit: cover;
+  }
+  .swiper-slide .details{
+
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .swiper-slide .details h3 {
+   font-family: 'Adelle Regular' !important;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    text-align: center;
+    line-height: 20px;
+
+  }
+  .swiper-slide .details h3 span {
+    display: inline-block;
+  line-height: 30px;
+    font-size: 26px;
+    color: #240b36;
+}
+.fadd{
+  position: absolute;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  left: 5px;
+  top: 380px;
+  font-size: 40px;
+}
+
+@media screen and (max-width:768px){
+  .swiper-slide .details h3 {
+    font-size: 20px;
+
+  }
+
+  .swiper-slide .details h3 span {
+    font-size: 16px;
+    color: #240b36;
+    line-height: 20px;
+}
+  .fadd{
+    top: 275px;
+    font-size: 30px;
+  }
+  .swiper-container {
+    width: 100%;
+    padding-top: 20vh;
+    padding-bottom: 50px;
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 430px;
+    background: #fff;
+  }
+  .swiper-slide .imgBx {
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+  }
+ .swiper-slide .imgBx img {
+   width:300px;
+   height: 300px;
+   object-fit: cover;
+ }
+ .swiper-slide .details{
+   box-sizing: border-box;
+   padding: 20px;
+ }
+
+}
+
+.swiper-button-prev{
+  z-index: 2;
+  outline: none;
+}
+.swiper-button-next{
+  outline: none;
+    z-index: 2;
+}
+
+/* RETROHHHH */
+
+h1.retrohDD {
+  font-family: 'Vintage Warehouse';
+  text-transform: uppercase;
+  font-size: 76px;
+  text-align: center;
+  line-height: 1;
+  font-weight: normal;
+  margin: 0;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  color: rgba(255,255,255,0.9);
+  }
+  @font-face {font-family:"Vintage Warehouse";src:url("./fonts/Vintage_Warehouse.eot?") format("eot"),url("./fonts/Vintage_Warehouse.woff") format("woff"),url("./fonts/Vintage_Warehouse.ttf") format("truetype"),url("./fonts/Vintage_Warehouse.svg#VintageWarehouse") format("svg");font-weight:normal;font-style:normal;}
+
+
+h1.retrohDD:focus {
+  outline: none;
+}
+
+
+@media screen and (max-width:767px){
+  h1.retrohDD{
+    font-size: 48px;
+  }
+}
+  @media screen and (max-width:467px){
+    h1.retrohDD{
+      font-size: 34px;
+    }
+}
+@media screen and (min-height:1100px)
+              and (max-height:1467px)
+              and (orientation:portrait) {
+   .swiper-container{
+transform: translateY(12vh);
+}
+}
+@media screen and (min-width:767px)
+              and (max-width:1167px)
+              and (orientation:portrait) {
+.swiper-container{
+
+  transform: translateY(12vh);
+}
+}

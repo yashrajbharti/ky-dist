@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="team.js"></script>
+<style>
+
+
+
+@font-face {
+font-family:"Vintage Warehouse";
+src:url("Vintage_Warehouse.eot?") format("eot"),url("Vintage_Warehouse.woff") format("woff"),url("Vintage_Warehouse.ttf") format("truetype"),url("Vintage_Warehouse.svg#VintageWarehouse") format("svg");
+font-weight:normal;
+font-style:normal;
+}
+@font-face {
+font-family: 'Adelle Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Adelle Regular'), url('Adelle_Reg.woff') format('woff');
+}
+@font-face {
+font-family:"Bebas";
+src:url("Bebas.ttf") format("truetype");
+font-weight:normal;
+font-style:normal;
+}
+@font-face {
+font-family: 'Gentona';
+src:url("Getona-Book.ttf") format("truetype"),url("Gentona-Book.woff") format("woff");
+font-style: normal;
+font-weight: normal;
+}
+body{
+ font-family: 'Adelle Regular';
+ background-image:linear-gradient(#c31432,#240b36);
+ }
+ @-webkit-keyframes backgroundAnimate {
+   from {
+     left: 0;
+     top: 0;
+   }
+   to {
+     left: -10000px;
+     top: -2000px;
+   }
+ }
+
+ @-moz-keyframes backgroundAnimate {
+   from {
+     left: 0;
+     top: 0;
+   }
+   to {
+     left: -10000px;
+     top: -2000px;
+   }
+ }
+
+ @-o-keyframes backgroundAnimate {
+   from {
+     left: 0;
+     top: 0;
+   }
+   to {
+     left: -10000px;
+     top: -2000px;
+   }
+ }
+
+ @keyframes backgroundAnimate {
+   from {
+     left: 0;
+     top: 0;
+   }
+   to {
+     left: -10000px;
+     top: -2000px;
+   }
+ }
+
+* {
+   object-fit: cover;
+}
+
+ #back {
+   background: url(http://www.tranexnet.com/img/back.png) repeat 20% 20%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   opacity: 0.6;
+   z-index: -1;
+   -webkit-animation-name: backgroundAnimate;
+   -webkit-animation-duration: 500s;
+   -webkit-animation-timing-function: linear;
+   -webkit-animation-iteration-count: infinite;
+   -moz-animation-name: backgroundAnimate;
+   -moz-animation-duration: 5s;
+   -moz-animation-timing-function: linear;
+   -moz-animation-iteration-count: infinite;
+   -o-animation-name: backgroundAnimate;
+   -o-animation-duration: 500s;
+   -o-animation-timing-function: linear;
+   -o-animation-iteration-count: infinite;
+   animation-name: backgroundAnimate;
+   animation-duration: 500s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+ }
+
+ #front {
+   background: url(http://www.tranexnet.com/img/front.png) repeat 35% 35%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   opacity: 0.8;
+   z-index: -1;
+   -webkit-animation-name: backgroundAnimate;
+   -webkit-animation-duration: 300s;
+   -webkit-animation-timing-function: linear;
+   -webkit-animation-iteration-count: infinite;
+   -moz-animation-name: backgroundAnimate;
+   -moz-animation-duration: 300s;
+   -moz-animation-timing-function: linear;
+   -moz-animation-iteration-count: infinite;
+   -o-animation-name: backgroundAnimate;
+   -o-animation-duration: 300s;
+   -o-animation-timing-function: linear;
+   -o-animation-iteration-count: infinite;
+   animation-name: backgroundAnimate;
+   animation-duration: 300s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+ }
+ @media only screen and (min-width:1023px) {
+ .thisback{
+   background-color: rgba(255, 255, 255, 0.09);
+   width: 80vw;
+   background-position: center;
+   padding:70px 0 45px 0px;
+   margin: 0 auto;
+   border-radius: 15px;
+   /* overflow: hidden; */
+ }
+}
+ .kylogo{
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    width:100px;
+  }
+ .head h1 {
+   text-align: center;
+   font-size: 60px;
+ }
+ .hello p {
+   font-family: "Vintage Warehouse";
+   font-size: 60px;
+   color: #fff;
+   text-align: center;
+   margin-top: 20px;
+ }
+ .post {
+   margin-bottom: 60px;
+ }
+ .pic {
+   display: inline-block;
+   position: absolute;
+   margin-left: -180px;
+   transform: translateX(35px);
+   padding-left: 60px;
+   padding-bottom: 120px;
+   padding-right: 80px;
+   top: 53px;
+   letter-spacing: 20px;
+   animation-name: iconss2;
+   animation-duration: 0.5s;
+   animation-play-state: paused;
+ }
+ .polaroid:hover  .pic {
+   animation-play-state:running;
+ }
+ .polaroid:active .pic {
+   animation-play-state:running;
+ }
+ .polaroid:not(:hover) .pic{
+   animation-name: iconss;
+   animation-duration: 0.5s;
+}
+ /* .img:hover + .pic {
+   animation-play-state: running;
+ } */
+ /* .:hover{
+   animation-play-state: running;
+ } */
+  @keyframes iconss{
+ 100%{top:53px;z-index:1;opacity:1;}
+ 0%{top:0px;z-index:-1;opacity:0;}
+ }
+ @keyframes iconss2 {
+   100%{top:53px;z-index:1;opacity:1;}
+   0%{top:0px;z-index:-1;opacity:0;}
+}
+ /* .fbi {
+   padding-right: 3px;
+ }
+ .gmaili {
+   padding-right: 3px;
+ }
+ .linki {
+   padding-right: 3px;
+ } */
+
+/*#p1{color:blue;
+    text-align:center;
+    font-size:300%;
+    text-shadow: 5px 2px 5px red;
+  background-size:cover;
+  background-repeat:y-repeat;
+  background:url("https://images.pexels.com/photos/1669068/pexels-photo-1669068.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    border: 5px outset violet;}*/
+h2{/*left:calc(50vw - 100px);*/
+   text-align:center;
+   color:#FAF2E8;
+   font-family: "Bebas";
+   padding:20px;
+   font-size:30px;
+   /* font-family:'Adelle Regular'; */
+   margin-bottom: 0px;
+   /* margin-top: 90px; */
+   margin-left: 1%;
+   position: relative;
+   animation-name: example;
+   animation-duration: 0.8s;
+}
+
+@keyframes example {
+  0%   {color:seagreen;left:calc(-50vw + 200px);}
+  100% {left:calc(0vw); }
+}
+
+.clearfix {
+  text-align: center;
+}
+
+.pole{
+    width: auto;
+	display: inline-block;
+	margin: auto;
+  margin-bottom: 30px;
+	padding: 25px 40px;
+}
+
+.polaroid{
+    width:275px;
+    height:315px;
+    box-sizing:border-box;
+    padding: 10px;
+    background:#ffffff;
+   <!-- margin-left:calc( (100% - 825px) / 6);
+    margin-right:calc( (100% - 825px) / 6);-->
+    margin-bottom:90px;
+     box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    border-radius:15px;
+}
+.polaroid.tilt-right1{
+  transform:rotate(1deg);
+-ms-transform:rotate(1deg);
+-webkit-transform:rotate(1deg);
+}
+.polaroid.tilt-right2{
+  transform:rotate(2deg);
+-ms-transform:rotate(2deg);
+-webkit-transform:rotate(2deg);
+}
+.polaroid.tilt-right3{
+  transform:rotate(.3deg);
+-ms-transform:rotate(3deg);
+-webkit-transform:rotate(3deg);
+}
+.polaroid.tilt-left1{
+  transform:rotate(-1deg);
+-ms-transform:rotate(-1deg);
+-webkit-transform:rotate(-1deg);
+}
+.polaroid.tilt-left2{
+  transform:rotate(-2deg);
+-ms-transform:rotate(-2deg);
+-webkit-transform:rotate(-2deg);
+}
+.polaroid.tilt-left3{
+  transform:rotate(0deg);
+-ms-transform:rotate(0deg);
+-webkit-transform:rotate(0deg);
+}
+/*.name{
+    position:relative;
+    top:-20px;
+    float:center;
+    text-align:center;
+    font-family:arial;
+    font-size:20px;
+    z-index:1;
+    border-color:black;
+    background-color:black;
+    border-style:solid;
+    border-width:5px;
+    color:red;
+    padding:10px;
+    /visibility:hidden;/
+    animation-name:peru;
+    animation-duration:2s;
+}@keyframes peru{
+0%{top:-50px;z-index:-1;opacity:0;}
+100%{top:-20px;z-index:1;opacity:1;}
+}
+*/
+/*.name:hover
+{background-color:black;
+color:red;
+}*/
+.photo{
+ background-image:radial-gradient(#b63aa2 65%,#b63aa2 35%);
+    width:235px;
+    height:235px;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.clearfix:after {
+    clear: both;
+}
+.container {
+  position: relative;
+  width: 100%;
+}
+.image {
+    position: relative;
+    display: block;
+    width: 255px;
+    height: 255px;
+    top: -10px;
+    margin: 0;
+    object-fit: cover;
+    margin-left:-10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+/*.overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  background-color: rgb(96,240,168,0.8);
+  overflow: hidden;
+  width: 0%;
+  height: 0;
+  transition: .5s ease;
+ border-radius:100%;
+}*/
+/*.polaroid:hover .ribbon1 {
+  /*transform:scale(1.2,1.2);
+  visibility:visible;
+  background-color:black;
+  color:red;
+}*/
+/*.text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}*/
+/*.rotatel{
+position:absolute;
+top:70%;
+left:3%;
+border-radius:100%;
+z-index:1;
+animation-name: exam1;
+  animation-duration: 8s;
+  /*animation-delay:5s;*/
+  /*animation-iteration-count: infinite;
+}
+.rotater{
+position:absolute;
+top:42%;
+right:-10px;
+border-radius:100%;
+z-index:1;
+animation-name: exam2;
+  animation-duration: 8s;
+  /*animation-delay:5s;*/
+  /*animation-iteration-count: infinite;
+}
+.rotatet{
+position:absolute;
+top: 15%;
+left: 6%;
+border-radius:100%;
+z-index:1;
+animation-name: exam3;
+  animation-duration: 8s;
+  /*animation-delay:5s;*/
+  /*animation-iteration-count: infinite;
+}*/
+.ribbon1 {
+  font-size: 25px;
+  margin: 6px auto;
+  margin-top: 10px;
+}
+
+.convenor{
+position:absolute;
+top:-24%;
+left:1%;
+color:blue;
+font-family: "Bebas";
+font-size:40px;
+/* letter-spacing: 4px; */
+color: #FAF2E8;
+text-shadow:2px 1px  3px red;
+margin:15px;
+}
+/* @keyframes exam1{
+0% {left:6px;top:70%}
+16.66% {left:265px;top:42%}
+33.33% {left:6px;top:15%}
+33.33%,100%{left:-10px;top:15%}
+}
+@keyframes exam2{
+0% {left:265px;top:42%}
+16.66% {left:6px;top:15%}
+33.33% {left:6px;top:70%}
+33.33%,100% {left:-10px;top:70%}
+}
+@keyframes exam3{
+0% {left:6px;top:15%}
+16.66% {left:6px;top:70%}
+33.33% {left:188px;top:42%}
+33.33%,100% {left:265px;top:42%}
+} */
+@media only screen and (max-width: 738px) {
+.ribbon{transform:scale(0.75);}
+.ribbon1 {transform: matrix(0.7,0,0,1,-40,-5);
+}
+@keyframes peru{
+0%{top:-50px;}
+100%{top:-40px;}
+}
+/* .holder, .advisers, .internal, .external, .log, .market, .social, .technical, .events, .creative, .design {
+  display: none;
+} */
+
+h2 {
+  margin-bottom: -10px;
+  padding-bottom: 0px;
+}
+.hello p {
+  font-size: 45px;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.post {
+  margin-bottom: -10px;
+}
+.convenor {
+  font-size: 25px;
+  margin-left: 25px;
+}
+ .polaroid {
+    width:200px;
+    height:230px;
+    margin-top: 30px;
+    margin-bottom:60px;
+    margin-left:calc( (100% - 200px) / 6);
+    margin-right:calc( (100% - 400px) / 4);
+  }
+  .photo{
+    width:160px;
+    height:160px;
+  }
+  .overlay{
+  bottom:40px;
+  }
+  .image{
+  width:10%;
+  }
+  .name{
+  top:-50px;
+  }
+  .container img{
+   width:180px;
+   height:180px;
+  }
+  .ribbon1 {
+    font-size: 22px;
+    transform: translateX(1px);
+  }
+  .pic {
+    letter-spacing: 6px;
+    margin-left: -160px;
+    padding: 0 60px 80px 50px;
+  }
+
+  /* @keyframes exam1{
+0% {left:6px;top:70%}
+16.66% {left:188px;top:42%}
+33.33% {left:6px;top:15%}
+33.33%,100%{left:6px;top:15%}
+}
+@keyframes exam2{
+0% {left:188px;top:42%}
+16.66% {left:6px;top:15%}
+33.33% {left:6px;top:70%}
+33.33%,100% {left:6px;top:70%}
+}
+@keyframes exam3{
+0% {left:6px;top:15%}
+16.66% {left:6px;top:70%}
+33.33% {left:188px;top:42%}
+33.33%,100% {left:188px;top:42%}
+} */
+}
+@media only screen and (max-width: 500px) {
+.ribbon{transform:matrix(0.6,0,0,0.635,-20,-16);}
+.ribbon1 {transform: matrix(0.91,0,0,1.05,-13.9,0.7) translate(1px, -3px);}
+.holder, .advisers, .internal, .external, .log, .market, .social, .technical, .events, .creative, .design {
+  display: none;
+}
+h2 {
+  margin-bottom: -10px;
+  padding-bottom: 0px;
+}
+.pole {
+  margin-bottom: 0px;
+}
+.post {
+  margin-bottom: -10px;
+}
+ .mark {
+  margin-top: 20px;
+}
+ .ip {
+  margin-top: -30px;
+}
+.kylogo{
+  width: 52px;
+  left: 0px;
+  top: 20px;
+  margin-right: 10px;
+}
+.ribbon {
+  left: 0%;
+}
+.hello p {
+  font-size: 34px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  margin-left: 12px;
+}
+@keyframes peru{
+0%{top:-50px;}
+100%{top:-40px;}
+}
+ .polaroid {
+    width:250px;
+    height:285px;
+    margin-top: 50px;
+    margin-bottom:70px;
+    margin-left:calc( (100% - 250px) / 2);
+    margin-right:calc( (100% - 250px) / 2);
+  }
+  .photo{
+    width:210px;
+    height:210px;
+  }
+  .overlay{
+  bottom:40px;
+  }
+  .image{
+  width:100%;
+  margin-left: 0px;
+  }
+  .name{
+  top:-50px;
+  }
+  .container img{
+   width:230px;
+   height:230px;
+   margin-left: -10px;
+  }
+  /* @keyframes exam1{
+0% {left:6px;top:70%}
+16.66% {left:240px;top:42%}
+33.33% {left:6px;top:15%}
+33.33%,100%{left:-10px;top:15%}
+}
+@keyframes exam2{
+0% {left:240px;top:42%}
+16.66% {left:6px;top:15%}
+33.33% {left:6px;top:70%}
+33.33%,100% {left:-10px;top:70%}
+}
+@keyframes exam3{
+0% {left:6px;top:15%}
+16.66% {left:6px;top:70%}
+33.33% {left:247px;top:42%}
+33.33%,100% {left:240px;top:42%}
+} */
+h2 {
+  font-size: 30px;
+}
+.convenor {
+  margin-left: 50px;
+  font-size: 25px;
+}
+.ribbon1 {
+  transform: translateX(2px);
+}
+.pic {
+  letter-spacing: 10px;
+  margin-left: -158px;
+}
+}
+@media only screen and (max-width: 850px) and (min-width: 760px) {
+ .polaroid {
+   margin-left:4%;
+   margin-right:4%;
+   margin-top: 60px;
+ }
+ .post {
+   margin-bottom: -20px;
+ }
+ .mark {
+   margin-top: 60px;
+   margin-bottom: -40px;
+ }
+ .ip {
+   margin-top: 60px;
+   margin-bottom: -40px;
+ }
+ .et {
+   margin-top: 60px;
+   margin-bottom: -40px;
+ }
+ .tech {
+   margin-top: 60px;
+   margin-bottom: -40px;
+ }
+ .eve {
+   margin-top: 60px;
+   margin-bottom: -0px;
+ }
+ .lao {
+   margin-top: 60px;
+   margin-bottom: -40px;
+ }
+ .dt {
+   margin-top: 60px;
+   margin-bottom: -40px;
+ }
+ .ct {
+   margin-top: 60px;
+   margin-bottom: -40px;
+ }
+ .adv {
+   margin-top: 60px;
+   margin-bottom: -40px;
+ }
+ /* .holder, .advisers, .internal, .external, .log, .market, .social, .technical, .events, .creative, .design {
+   display: none;
+ }
+ h2 {
+   margin-bottom: -10px;
+   padding-bottom: 0px;
+ }
+ .post {
+   margin-bottom: -10px;
+ } */
+}
+
+
+
+@media only screen and (max-width: 1025px) and (min-width: 1020px) {
+  .polaroid {
+    margin-left:calc( (100% - 275px) / 6);
+    margin-right:calc( (100% - 550px) / 4);
+    margin-top: 60px;
+  }
+
+  /* .holder, .advisers, .internal, .external, .log, .market, .social, .technical, .events, .creative, .design {
+    display: none;
+  }
+  h2 {
+    margin-bottom: -10px;
+    padding-bottom: 0px;
+  }
+  .post {
+    margin-bottom: -10px;
+  } */
+}
+.ribbon {
+	font-size: 50px;
+	width: 400px;
+	position: relative;
+	background: linear-gradient(0deg, #069 0%, #09c 99%);
+	color: #fff;
+  text-align: center;
+	padding: 2px 0px;
+	margin: 20px auto;
+}
+.ribbon:before,.ribbon:after{
+	content: "";
+	position: absolute;
+	display: block;
+	bottom: -20px;
+	border: 25px solid #069;
+	z-index: -1;
+}
+.ribbon:before{
+	left: -30px;
+	border-left-color: transparent;
+}
+.ribbon:after{
+	right: -30px;
+	border-right-color: transparent;
+}
+.ribbon-folds:before,.ribbon-folds:after{
+	content: "";
+	position: absolute;
+	display: block;
+	border-style: solid;
+	border-color: #036 transparent;
+	bottom: -20px;
+}
+.ribbon-folds:before{
+	left: -0px;
+	border-width: 20px 0 0 20px;
+}
+.ribbon-folds:after{
+	right: -0px;
+        border-width: 20px 20px 0 0;
+}
+/* .ribbon1 {
+	font-size: 25px;
+	width: 275px;
+	position: absolute;
+  border-radius: 0 0 15px 15px;
+	background: #ffffff;
+	color: #000000;
+        text-align: center;
+	padding: 4px 0px;
+	 margin: 16px auto;
+    margin-left:-10px;
+    top:-19px;
+    z-index:1;
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    animation-name:peru;
+    animation-duration:2s;
+} */
+@keyframes peru{
+0%{top:-50px;z-index:-1;opacity:0;}
+100%{top:-20px;z-index:1;opacity:1;}
+}
+/*.ribbon1:before,.ribbon1:after{
+	content: "";
+	position: absolute;
+	display: block;
+	bottom: -10px;
+	border: 10px solid #dbbfa2;
+	z-index: -1;
+}
+.ribbon1:before{
+	left: -10px;
+	border-left-color: transparent;
+}
+.ribbon1:after{
+	right:-10px;
+	border-right-color: transparent;
+}
+*/
+/*.ribbon-folds1:before,.ribbon-folds1:after{
+	content: "";
+	position: absolute;
+	display: block;
+	border-style: solid;
+	border-color: #bfa386 transparent;
+	bottom: -10px;
+}
+.ribbon-folds1:before{
+	left: -0px;
+	border-width: 10px 0 0 10px;
+}
+.ribbon-folds1:after{
+	right: -0px;
+        border-width: 10px 10px 0 0;
+}*/
+
+.ribbon-z-index{position: relative;z-index: 1; }
+
+@media only screen and (orientation: landscape) {
+   .posth2 {
+	display: none;
+	}
+
+	.hello p{
+	margin-bottom: 100px;
+	}
+}
+
+</style>
+
+</head>
+<body>
+  <div id="back"></div>
+  <div id="front"></div>
+  <a href="../index.html">
+      <img src="20190804_220113.png" alt="" class="kylogo">
+      </a>
+  <div class="hello">
+
+  <p>
+  CORE TEAM</p>
+
+  </div>
+
+
+
+<div class="clearfix" ontouchstart="">
+<h2 class="post posth2">POST HOLDERS</h2>
+
+
+<div class="thisback">
+
+
+<div class="pole holder" >
+  <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px ></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px ></a></div> -->
+	<div class="photo" >
+    <div class="convenor">CO-CONVENOR</div>
+          <div class="container"><img src="man.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+<div class="random">
+
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Mohit Sharma</strong></p>
+</div>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:name@gmail.com" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+
+<div class="pole holder" >
+<div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+    <div class="convenor" style="left:13%;">CONVENOR</div>
+          <div class="container"><img src="man.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Utsav Gandhi</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+<div class="pole holder" >
+ <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+         <div class="photo" >
+         <div class="convenor">CO-CONVENOR</div>
+             <div class="container">
+                 <img src="man.jpg" width="230px" height="230px"  class="image">
+
+             </div>
+          </div>
+	  <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Rishab Agarwal</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+   </div>
+   </div>
+   </div>
+</div>
+
+
+
+
+
+
+
+<div class="clearfix" ontouchstart="">
+<h2 class="mark">MARKETING</h2>
+   <div class="thisback">
+
+
+   <div class="pole market" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="jagdish.jpg" width="230px" height="230px" class="image">
+              
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Jagdish</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+   <div class="pole" >
+    <div class="polaroid tilt-left3 market">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="priyanshu.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Priyanshu</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/profile.php?id=100015317821448" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:priyanshu.rajrahul.mec17@iitbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/priyanshu-raj096" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+   <div class="pole market" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+         <div class="photo" >
+             <div class="container">
+                 <img src="tanay.jpg" width="230px" height="230px"  class="image">
+
+             </div>
+          </div>
+	  <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Tanay</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+   </div>
+   </div>
+
+  <div class="pole market" >
+   <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+         <div class="photo" >
+             <div class="container">
+                 <img src="yashika.jpg" width="230px" height="230px"  class="image">
+
+             </div>
+          </div>
+	  <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Yashika</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/cyashu99" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:yashikach.cd.civ17@iitbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/yashika-chaudhary-9b770b163/" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+   </div>
+   </div>
+  </div>
+</div>
+
+<div class="clearfix" ontouchstart="">
+<h2 class="ip">PUBLICITY</h2>
+   <div class="thisback">
+
+
+   <div class="pole internal" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="sharad.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Sharad</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+   <div class="pole internal" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="utkarsh.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Utkarsh</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+   <div class="pole internal" >
+	<div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="vaibhav.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Vaibhav</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+   <div class="pole internal" >
+	<div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="pankaj.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Pankaj</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/pankaj.kkilaniya" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:pankaj.kkilaniya.civ17@iitbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/pankaj-kumar-kilaniya-66b494180/" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+</div>
+	</div>
+
+   <div class="pole internal" >
+	<div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="neeraj.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Neeraj</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/neeraj.devadwal" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+   <div class="pole internal" >
+	<div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="vasu.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Vasu</strong></p>
+<div class="pic">
+    <a href="https://m.facebook.com/vasu.agrawal.33?ref=bookmarks" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:vasu.agrawal.bce17@iitbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/vasu-agrawal-6a23ab162" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+   <div class="pole internal" >
+	<div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="man.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Harsh</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/hani.mehra.12" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:harsh.kmehra.civ17@iitbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/harsh-mehr-23a5aa195" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+<div class="pole internal" >
+	<div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="naveen.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Naveen</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:naveen.student.mec17@iitbhu.ac" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/naveen-meena-0b813718b" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+  <div class="pole internal" >
+ <div class="polaroid tilt-left3">
+   <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+   <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+   <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+ <div class="photo" >
+         <div class="container"><img src="pranav.jpg" width="230px" height="230px" class="image">
+
+         </div>
+       </div>
+        <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Pranav</strong></p>
+<div class="pic">
+   <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+   <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+   <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+   </div>
+ </div>
+
+<div class="pole internal" >
+ <div class="polaroid tilt-left3">
+   <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+   <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+   <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+ <div class="photo" >
+         <div class="container"><img src="man.jpg" width="230px" height="230px" class="image">
+
+         </div>
+       </div>
+        <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Yash</strong></p>
+<div class="pic">
+   <a href="https://www.facebook.com/beingyashrajput" target="_blank"><img src="fb.png" width=40px height=40px></a>
+   <a href="mailto:yash.wsingh.mec17@iitbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+   <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+   </div>
+ </div>
+
+
+   </div>
+</div>
+
+<!--
+<div class="clearfix" ontouchstart="">
+<h2 class="soc">SOCIAL MEDIA</h2>
+    <div class="polaroid tilt-left3 social">
+    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
+	<div class="photo" >
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">chris</strong></p>
+
+</div>
+    </div>
+
+
+
+    <div class="polaroid tilt-left3 social">
+    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
+	<div class="photo" >
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">chris</strong></p>
+
+</div>
+    </div>
+
+    <div class="polaroid tilt-left3 social">
+    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
+         <div class="photo" >
+             <div class="container">
+                 <img src="1.png" width="230px" height="230px"  class="image">
+
+             </div>
+          </div>
+	  <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">jainag</strong></p>
+
+</div>
+   </div>
+</div>-->
+
+<div class="clearfix" ontouchstart="">
+<h2 class="et">PR</h2>
+  <div class="thisback">
+
+
+   <div class="pole external" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="arjun.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Arjun</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/salyan.arjun" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:arjun.salyan.che17@itbhh.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/arjunsalyan" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+   <div class="pole external" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="man.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Ansh</strong></p>
+<div class="pic">
+    <a href="https://m.facebook.com/ansh.agrawal.315" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:ansh.agrawal.che17@iitbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/ansh-agrawal-2520a916a" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+  </div>
+
+</div>
+
+<div class="clearfix" ontouchstart="">
+<h2 class="eve">EVENTS</h2>
+  <div class="thisback">
+
+
+   <div class="pole events" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="man.jpg" width="230px" height="270px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Manoj</strong></p>
+<div class="pic">
+    <a href="https://m.facebook.com/home.php" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:rmanoj.maurya.phe17@iitbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/manoj-maurya-3a38a9155" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+<div class="pole events" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="man.jpg" width="230px" height="270px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Kamal</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/kamal.kalme.927" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:Kamal.student.phe17@itbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="kamal.jpg" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+  </div>
+</div>
+
+
+
+<div class="clearfix" ontouchstart="">
+<h2 class="lao">LOGISTICS AND OPERATIONS</h2>
+  <div class="thisback">
+
+
+   <div class="pole log" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="sai jadhav.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Jadhav Sai</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+	 <div class="pole log" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="sai kesna.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Sai Kesna</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+   <div class="pole log" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+         <div class="photo" >
+             <div class="container">
+                 <img src="atri.jpg" width="230px" height="230px"  class="image">
+
+             </div>
+          </div>
+	  <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Atri</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/atri.patel.963" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:atri.kumar.patel.chy17@itbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/atri-patel-99396416b" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+   </div>
+   </div>
+
+  <div class="pole log" >
+   <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="kiran.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Kiran</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+ <div class="pole log" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="nitheesh.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Nitheesh</strong></p>
+<div class="pic">
+    <a href="https://m.facebook.com/nitheesh.daram" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:daram.nitheesh.min17@iitbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/nitheesh-daram-a0b513172" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+   <div class="pole log" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+         <div class="photo" >
+             <div class="container">
+                 <img src="aravind.jpg" width="230px" height="230px"  class="image">
+
+             </div>
+          </div>
+	  <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Aravind</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+   </div>
+   </div>
+  </div>
+</div>
+
+
+<div class="clearfix" ontouchstart="">
+
+<h2 class="tech">TECHNICAL</h2>
+   <div class="thisback">
+
+
+   <div class="pole technical" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="parth.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Parth</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+   <div class="pole technical" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="tyagi.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Tyagi</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+   <div class="pole technical" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+         <div class="photo" >
+             <div class="container">
+                 <img src="man.jpg" width="230px" height="230px"  class="image">
+
+             </div>
+          </div>
+	  <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Pankaj</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+   </div>
+   </div>
+
+   <div class="pole technical" >
+      <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+         <div class="photo" >
+             <div class="container">
+                 <img src="man.jpg" width="230px" height="230px"  class="image">
+
+             </div>
+          </div>
+	  <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Vaibhav</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/vaibhav.kumar.39142" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="mailto:vaibhav.kumar.civ17@itbhu.ac.in" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/in/vaibhav-kumar-0a6794176" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+   </div>
+    </div>
+     </div>
+</div>
+
+
+
+<div class="clearfix" ontouchstart="">
+<h2 class="dt">DESIGN TEAM</h2>
+ <div class="thisback">
+
+     <div class="pole design" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="man.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Dipesh</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+	 
+	 
+   <div class="pole design" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="man.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Sudhanshu</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+   
+ </div>
+</div>
+
+
+<div class="clearfix" ontouchstart="">
+<h2 class="ct">CONTENT & CREATIVE </h2>
+  <div class="thisback">
+
+
+  <div class="pole creative" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="man.jpg" width="230px" height="270px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Khyati</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+   <div class="pole creative" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="anjali.jpg" width="230px" height="270px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Anjali</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+  </div>
+</div>
+
+
+
+<div class="clearfix" ontouchstart="">
+<h2 class="adv">CULT COUNCIL</h2>
+ <div class="thisback">
+
+
+   <div class="pole advisers" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="man.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Shreyas</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+
+   <div class="pole advisers" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+	<div class="photo" >
+          <div class="container"><img src="man.jpg" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Apurv</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+    </div>
+	</div>
+
+   <div class="pole advisers" >
+    <div class="polaroid tilt-left3">
+    <!-- <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div> -->
+         <div class="photo" >
+             <div class="container">
+                 <img src="man.jpg" width="230px" height="230px"  class="image">
+
+             </div>
+          </div>
+	  <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">Anshula</strong></p>
+<div class="pic">
+    <a href="https://www.facebook.com/" target="_blank"><img src="fb.png" width=40px height=40px></a>
+    <a href="https://www.gmailgram.com/" target="_blank"><img src="gmail.png" width=40px height=40px></a>
+    <a href="https://www.linkedin.com/login" target="_blank"><img src="link.png" width=40px height=40px></a>
+</div>
+</div>
+   </div>
+   </div>
+</div>
+
+
+    </div>
+     </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br>
+</body>
+</html>

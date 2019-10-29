@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<div id="htmlB"lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Particle Text Effect</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<div id="bodyB">
+
+
+<!-- partial:index.partial.html -->
+<h1  class="retrohB" data-heading="About Us">About Us</h1>
+  <h3 class="about-textB laptopB">Kashiyatra, the Annual Socio-Cultural festival of IIT(BHU) Varanasi is a three-day fiesta, encompassing enchanting literary, musical and artistic events. It is north India's largest cultural festival and takes place within Asia's biggest residential university, BHU. Varanasi, the holy city, houses a plethora of traditions with an ecstatic blend of cultures. IIT(BHU) has been nationally acclaimed for imparting technical knowledge in diverse fields and has recently concluded its centenary celebration, making this edition even more special.</h3>
+<h3 class="about-textB phoneB">Kashiyatra, the Annual Socio-Cultural festival of IIT(BHU) is a three-day fiesta, held in the holy city of Varanasi. It encompasses enchanting fusion of literary, musical and artistic events. It is north India's largest cultural festival and takes place within Asia's biggest residential university, BHU. IIT(BHU) has been nationally acclaimed for imparting technical knowledge in diverse fields and has recently concluded its centenary celebration, making this edition even more special.</h3>
+
+<!-- partial:index.partial.html -->
+<svg class="svgb" viewBox="0 0 100 130" width="100" height="130">
+  <style>
+
+
+    text.textb {
+      font-family: 'Adelle Light';
+    }
+  </style>
+  <defs>
+    <!-- pattern used to repeat a circle element on the x dimension -->
+    <pattern id="pattern-x" width="0.1" height="1" viewBox="0 0 10 10">
+      <circle cx="5" cy="0" r="4"></circle>
+    </pattern>
+    <!-- pattern used to repeat a circle element on the y dimension
+    the height is smaller then the width of the previous pattern since the pattern is applied on a larger area
+    -->
+    <pattern id="pattern-y" width="1" height="0.072" viewBox="0 0 10 10">
+      <circle cx="0" cy="5" r="4"></circle>
+    </pattern>
+
+    <!-- mask using the patterns to cut out portions around te 100x150 container -->
+    <mask id="mask-rect">
+      <rect x="0" y="0" width="100" height="130" fill="#fff"></rect>
+      <rect id="x" x="2.5" y="0" width="95" height="8" fill="url(#pattern-x)"></rect>
+      <use href="#x" transform="translate(0 130) scale(1 -1)"></use>
+      <rect id="y" x="0" y="2.5" width="8" height="125" fill="url(#pattern-y)"></rect>
+      <use href="#y" transform="translate(100 0) scale(-1 1)"></use>
+    </mask>
+
+    <!-- linear gradient for the drawing inside the stamp -->
+    <linearGradient id="gradient-rect" x1="0.5" x2="0.5" y1="0" y2="1">
+      <stop stop-color="#5f0f40" offset="0"></stop>
+      <stop stop-color="#240b36" offset="1"></stop>
+    </linearGradient>
+
+    <!-- mask to crop a circle in the center of the postcard
+    userSpaceOnUse means the mask is applied relative to the wrapping svg class="svgb"
+    ! define the circle element to re-use it throughout the project
+    -->
+    <circle id="circle" cx="0" cy="0" r="18"></circle>
+    <mask id="mask-circle" maskUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="100" height="130" fill="#fff"></rect>
+      <use href="#circle" x="50" y="55" fill="#fff"></use>
+    </mask>
+
+    <!-- path used to create the mountains
+    starting from the bottom right corner to scale the shape from that specific point
+    -->
+
+  </defs>
+  <g>
+
+    <!-- group the rectangle and circle elements describing the main features to apply the mask and see the background through
+    -->
+    <g mask="url(#mask-circle)">
+      <!-- include an additional mask on the rectangle used as background, to carve out the edges with the circle pattern -->
+      <rect x="0" y="0" width="100" height="130" fill="#fff" mask="url(#mask-rect)"></rect>
+
+      <!-- add the gradient for the sunshine -->
+      <rect  x="10" y="10" width="80" height="70" fill="url(#gradient-rect)"></rect>
+
+      <!-- on top of the gradient, add multiple instances of the circle, with different fill colors -->
+
+    </g>
+
+    <!-- path elements describing the mountain
+    position the shape in the bottom right corner of the connected rectangle
+    -->
+    <?xml version="1.0" encoding="iso-8859-1"?>
+    <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+    <svg class="svgb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="23px" y="20px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="51" height="51">
+    <g>
+    	<g>
+    		<path fill= "white" d="M463.022,241.019c13.533-14.307,24.398-33.705,32.294-57.657c13.945-42.304,15.567-89.276,15.293-113.511    c-0.05-4.355-2.731-8.111-6.833-9.567c-4.116-1.463-8.576-0.232-11.37,3.126c-12.765,15.35-26.945,17.521-43.351,6.64    c-21.687-14.384-43.337-20.337-66.182-18.205c-19.518,1.823-36.622,9.222-51.714,15.749c-5.888,2.547-11.45,4.953-16.694,6.827    c-1.763,0.633-3.667,0.368-5.221-0.728c-1.6-1.127-2.518-2.892-2.518-4.842v-0.238c0-27.348-16.562-40.287-29.869-50.685    c-6.03-4.711-11.726-9.161-14.217-13.911C261.347,1.547,258.789,0,256,0s-5.347,1.547-6.642,4.017    c-2.491,4.75-8.187,9.2-14.217,13.911c-13.308,10.397-29.869,23.337-29.869,50.685v0.238c0,1.95-0.918,3.715-2.518,4.842    c-1.553,1.095-3.456,1.357-5.222,0.728c-5.243-1.874-10.806-4.28-16.693-6.827c-15.092-6.527-32.196-13.926-51.714-15.749    c-22.843-2.129-44.496,3.821-66.182,18.205C46.537,80.93,32.357,78.757,19.594,63.41c-2.793-3.36-7.258-4.59-11.37-3.127    c-4.102,1.456-6.783,5.212-6.833,9.567c-0.274,24.234,1.348,71.207,15.293,113.511c7.896,23.952,18.761,43.351,32.294,57.657    c16.461,17.401,36.94,27.43,60.87,29.806c63.472,6.302,99.033,22.451,117.689,34.889c8.442,5.629,18.285,8.604,28.463,8.604    s20.021-2.975,28.463-8.604c18.656-12.438,54.218-28.587,117.689-34.889C426.082,268.448,446.562,258.42,463.022,241.019z     M400.67,255.898c-66.55,6.607-104.451,23.949-124.527,37.334c-5.971,3.98-12.936,6.084-20.143,6.084s-14.172-2.104-20.143-6.084    c-20.076-13.385-57.978-30.727-124.527-37.334c-37.69-3.743-64.741-29.728-80.4-77.232    c-11.346-34.418-14.112-72.394-14.511-97.242c5.192,4.303,10.736,7.302,16.572,8.954c12.298,3.483,25.163,0.848,38.244-7.829    c41.998-27.857,74.751-13.688,103.649-1.188c6.118,2.646,11.897,5.146,17.599,7.185c6.329,2.261,13.397,1.294,18.91-2.589    c5.56-3.917,8.879-10.312,8.879-17.105v-0.238c0-20.031,11.709-29.18,24.104-38.865c4.159-3.249,8.187-6.396,11.623-9.897    c3.437,3.502,7.464,6.648,11.623,9.897c12.396,9.686,24.104,18.834,24.104,38.865v0.238c0,6.794,3.319,13.188,8.879,17.105    c5.513,3.883,12.584,4.85,18.909,2.589c5.702-2.038,11.481-4.538,17.6-7.185c28.897-12.499,61.649-26.668,103.649,1.188    c13.081,8.677,25.946,11.309,38.244,7.829c5.836-1.652,11.38-4.651,16.572-8.955c-0.398,24.85-3.165,62.825-14.511,97.243    C465.411,226.171,438.36,252.155,400.67,255.898z"/>
+    		<path fill= "white" d="M200.219,140.227c-13.248-10.799-29.873-14.992-49.408-12.452c-48.943,6.351-65.131-6.179-66.339-7.188    c-2.289-2.547-5.889-3.075-8.933-1.474c-3.073,1.617-4.497,5.28-3.636,8.645c10.056,39.302,29.16,66.181,56.78,79.89    c15.428,7.656,31.469,10.18,45.925,10.18c27.08,0,48.58-8.863,49.938-9.436c2.967-1.25,4.804-4.255,4.566-7.465    C228.994,199.313,225.892,161.153,200.219,140.227z M135.353,194.211c-19.676-9.766-34.405-27.868-43.923-53.927    c12.153,3.686,31.574,6.227,61.313,2.365c15.256-1.978,28.024,1.101,37.943,9.159c15.528,12.615,20.958,34.459,22.708,44.669    C200.378,200.703,165.816,209.33,135.353,194.211z"/>
+    		<path fill= "white" d="M436.461,119.113c-3.043-1.603-6.644-1.072-8.933,1.474c-1.208,1.009-17.398,13.543-66.339,7.188    c-19.534-2.538-36.16,1.653-49.408,12.452c-25.673,20.927-28.775,59.086-28.895,60.7c-0.237,3.21,1.6,6.215,4.566,7.465    c1.358,0.572,22.854,9.436,49.938,9.436c14.454,0,30.5-2.524,45.925-10.18c27.62-13.709,46.725-40.588,56.78-79.89    C440.958,124.394,439.534,120.73,436.461,119.113z M376.744,194.163c-30.379,15.129-65.098,6.506-78.149,2.296    c1.727-10.188,7.106-31.924,22.664-44.605c9.926-8.092,22.71-11.188,37.999-9.204c29.746,3.864,49.16,1.32,61.313-2.366    C411.068,166.298,396.371,184.388,376.744,194.163z"/>
+    		<path fill= "white" d="M494.972,336.714v-110.71c0-4.143-3.357-7.5-7.5-7.5s-7.5,3.357-7.5,7.5v108.28h-10.856v-69.035    c0-4.143-3.357-7.5-7.5-7.5s-7.5,3.357-7.5,7.5v71.465c-5.678,3.223-9.517,9.325-9.517,16.307v140.243    c0,10.331,8.405,18.736,18.736,18.736h22.417c10.331,0,18.736-8.405,18.736-18.736V353.021    C504.488,346.039,500.649,339.937,494.972,336.714z M489.488,493.264c0,2.061-1.676,3.736-3.736,3.736h-22.417    c-2.061,0-3.736-1.676-3.736-3.736V353.021c0-2.061,1.676-3.736,3.736-3.736h22.417c2.061,0,3.736,1.676,3.736,3.736V493.264z"/>
+    		<path fill= "white" d="M271.605,58.801c-5.451-6.46-10.94-10.512-11.172-10.681c-2.639-1.936-6.229-1.936-8.867,0    c-0.231,0.169-5.721,4.221-11.172,10.681c-7.616,9.024-11.642,18.602-11.642,27.695s4.025,18.671,11.642,27.695    c5.451,6.46,10.94,10.512,11.172,10.681c1.319,0.968,2.877,1.451,4.434,1.451s3.114-0.483,4.434-1.451    c0.231-0.169,5.721-4.221,11.172-10.681c7.616-9.024,11.642-18.602,11.642-27.695S279.222,67.825,271.605,58.801z     M256.021,108.932c-4.942-4.751-12.269-13.331-12.269-22.436c0-8.628,6.868-17.252,12.226-22.436    c4.942,4.751,12.269,13.331,12.269,22.436C268.247,95.124,261.379,103.748,256.021,108.932z"/>
+    	</g>
+    </g>
+    </svg>
+
+    <!-- snow atop the mountain -->
+    <!-- text class="textb" describing the destination, and positioned in the bottom section of the graphic
+    Events
+        30+
+    -->
+    <g transform="translate(10 110)" fill="#1D2028">
+      <text class="textb" font-size="11" x="-15" y="75" style="text-transform: uppercase; font-weight: 1300; transform: rotate(270deg);">Events</text>
+      <text class="textb" fill="#2b3652" x="60" y="9" font-size="42" text-anchor="end" style="font-weight: 900; letter-spacing: -0.05rem;">60+</text>
+    </g>
+  </g>
+</svg>
+
+
+
+
+
+<svg class="svgb" viewBox="0 0 100 130" width="100" height="130">
+  <style>
+
+    text.textb {
+      font-family: "Adelle Light";
+    }
+  </style>
+  <defs>
+    <!-- pattern used to repeat a circle element on the x dimension -->
+    <pattern id="pattern-x" width="0.1" height="1" viewBox="0 0 10 10">
+      <circle cx="5" cy="0" r="4"></circle>
+    </pattern>
+    <!-- pattern used to repeat a circle element on the y dimension
+    the height is smaller then the width of the previous pattern since the pattern is applied on a larger area
+    -->
+    <pattern id="pattern-y" width="1" height="0.072" viewBox="0 0 10 10">
+      <circle cx="0" cy="5" r="4"></circle>
+    </pattern>
+
+    <!-- mask using the patterns to cut out portions around te 100x150 container -->
+    <mask id="mask-rect">
+      <rect x="0" y="0" width="100" height="130" fill="#fff"></rect>
+      <rect id="x" x="2.5" y="0" width="95" height="8" fill="url(#pattern-x)"></rect>
+      <use href="#x" transform="translate(0 130) scale(1 -1)"></use>
+      <rect id="y" x="0" y="2.5" width="8" height="125" fill="url(#pattern-y)"></rect>
+      <use href="#y" transform="translate(100 0) scale(-1 1)"></use>
+    </mask>
+
+    <!-- linear gradient for the drawing inside the stamp -->
+    <linearGradient id="gradient-rect" x1="0.5" x2="0.5" y1="0" y2="1">
+      <stop stop-color="#5f0f40" offset="0"></stop>
+      <stop stop-color="#240b36" offset="1"></stop>
+    </linearGradient>
+
+    <!-- mask to crop a circle in the center of the postcard
+    userSpaceOnUse means the mask is applied relative to the wrapping svg
+    ! define the circle element to re-use it throughout the project
+    -->
+    <circle id="circle" cx="0" cy="0" r="18"></circle>
+    <mask id="mask-circle" maskUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="100" height="130" fill="#fff"></rect>
+      <use href="#circle" x="50" y="55" fill="#fff"></use>
+    </mask>
+
+    <!-- path used to create the mountains
+    starting from the bottom right corner to scale the shape from that specific point
+    -->
+
+  </defs>
+  <g>
+
+    <!-- group the rectangle and circle elements describing the main features to apply the mask and see the background through
+    -->
+    <g mask="url(#mask-circle)">
+      <!-- include an additional mask on the rectangle used as background, to carve out the edges with the circle pattern -->
+      <rect x="0" y="0" width="100" height="130" fill="#fff" mask="url(#mask-rect)"></rect>
+
+      <!-- add the gradient for the sunshine -->
+      <rect  x="10" y="10" width="80" height="70" fill="url(#gradient-rect)"></rect>
+
+      <!-- on top of the gradient, add multiple instances of the circle, with different fill colors -->
+
+    </g>
+
+    <!-- path elements describing the mountain
+    position the shape in the bottom right corner of the connected rectangle
+    -->
+
+    <!-- snow atop the mountain -->
+    <?xml version="1.0" encoding="iso-8859-1"?>
+    <!-- Generator: Adobe Illustrator 19.0.0, svg class="svgb" Export Plug-In . SVG Version: 6.00 Build 0)  -->
+    <svg class="svgb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="23px" y="18px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="51" height="51">
+    <g>
+    	<g>
+    		<path fill= "white" d="M256,223.652c-25.077,0-45.479,20.402-45.479,45.479c0,25.078,20.402,45.48,45.479,45.48s45.479-20.402,45.479-45.48    C301.479,244.054,281.077,223.652,256,223.652z M256,299.612c-16.807,0-30.479-13.674-30.479-30.48s13.673-30.479,30.479-30.479    s30.479,13.673,30.479,30.479S272.807,299.612,256,299.612z"/>
+    		<path fill= "white" d="M67.964,343.58h53.468c8.521,0,15.455-6.933,15.455-15.454v-53.468c0-8.521-6.934-15.455-15.455-15.455H67.964    c-8.521,0-15.454,6.934-15.454,15.455v53.468C52.51,336.648,59.443,343.58,67.964,343.58z M121.887,274.659v53.468    c0,0.25-0.204,0.454-0.455,0.454h-19.233v-54.377h19.233C121.683,274.204,121.887,274.408,121.887,274.659z M67.51,274.659    c0-0.251,0.204-0.455,0.454-0.455h19.234v54.377H67.964c-0.25,0-0.454-0.204-0.454-0.454V274.659z"/>
+    		<path fill= "white" d="M459.49,274.659c0-8.521-6.933-15.455-15.454-15.455h-53.468c-8.521,0-15.455,6.934-15.455,15.455v53.468    c0,8.521,6.934,15.454,15.455,15.454h53.468c8.521,0,15.454-6.933,15.454-15.454V274.659z M390.113,328.126v-53.468    c0-0.251,0.204-0.455,0.455-0.455h19.233v54.377h-19.233C390.317,328.58,390.113,328.376,390.113,328.126z M444.49,328.126    c0,0.25-0.204,0.454-0.454,0.454h-19.234v-54.377h19.234c0.25,0,0.454,0.204,0.454,0.455V328.126z"/>
+    		<path fill= "white" d="M52.51,437.346c0,8.521,6.933,15.454,15.454,15.454h53.468c8.521,0,15.455-6.933,15.455-15.454v-53.468    c0-8.521-6.934-15.455-15.455-15.455H67.964c-8.521,0-15.454,6.934-15.454,15.455V437.346z M121.887,383.878v53.468    c0,0.25-0.204,0.454-0.455,0.454h-19.233v-54.377h19.233C121.683,383.423,121.887,383.627,121.887,383.878z M67.51,383.878    c0-0.251,0.204-0.455,0.454-0.455h19.234V437.8H67.964c-0.25,0-0.454-0.204-0.454-0.454V383.878z"/>
+    		<path fill= "white" d="M444.036,368.423h-53.468c-8.521,0-15.455,6.934-15.455,15.455v53.468c0,8.521,6.934,15.454,15.455,15.454h53.468    c8.521,0,15.454-6.933,15.454-15.454v-53.468C459.49,375.357,452.557,368.423,444.036,368.423z M390.113,437.346v-53.468    c0-0.251,0.204-0.455,0.455-0.455h19.233V437.8h-19.233C390.317,437.8,390.113,437.596,390.113,437.346z M444.49,437.346    c0,0.25-0.204,0.454-0.454,0.454h-19.234v-54.377h19.234c0.25,0,0.454,0.204,0.454,0.455V437.346z"/>
+    		<path fill= "white" d="M511.582,213.34v-14.59c0-8.206-6.677-14.883-14.883-14.883h-15.879l-39.713-58.727    c-3.941-5.83-10.497-9.311-17.535-9.311H316.126l-46.868-37.653c-1.764-1.418-3.711-2.51-5.758-3.276v-14.53l52.109-19.373    c4.084-1.517,6.723-5.312,6.723-9.668s-2.639-8.151-6.721-9.668L258.764,0.527c-0.475-0.189-0.975-0.33-1.492-0.418    c-0.68-0.118-1.363-0.138-2.03-0.07c-0.009,0.001-0.018,0.002-0.027,0.003c-0.044,0.005-0.089,0.01-0.133,0.015    c-0.034,0.004-0.067,0.009-0.1,0.013c-0.018,0.002-0.036,0.005-0.054,0.008c-1.34,0.192-2.566,0.738-3.579,1.54    c-0.013,0.01-0.025,0.02-0.038,0.031c-0.03,0.024-0.06,0.048-0.09,0.073c-0.043,0.035-0.085,0.071-0.127,0.107    c0,0-0.001,0.001-0.001,0.001c-0.533,0.46-1.005,1-1.397,1.609c-0.008,0.012-0.016,0.025-0.024,0.037    c-0.02,0.032-0.04,0.064-0.06,0.096c-0.017,0.027-0.034,0.055-0.05,0.082c-0.011,0.018-0.022,0.037-0.032,0.055    c-0.026,0.044-0.052,0.089-0.077,0.134c-0.001,0.002-0.002,0.004-0.004,0.006c-0.377,0.675-0.652,1.414-0.806,2.197    c-0.108,0.544-0.154,1.089-0.141,1.629v47.308c-0.003,0.114-0.003,0.228,0,0.343v19.576c-2.046,0.766-3.994,1.858-5.758,3.275    l-46.868,37.653H88.427c-7.038,0-13.594,3.48-17.535,9.311l-39.713,58.727H15.3c-8.206,0-14.883,6.677-14.883,14.883v14.59    c0,8.206,6.677,14.883,14.883,14.883h136.022v239.421H38.169V249.102c0-4.143-3.357-7.5-7.5-7.5s-7.5,3.357-7.5,7.5v218.543H15.3    c-8.206,0-14.883,6.677-14.883,14.883v14.59C0.418,505.323,7.094,512,15.3,512H496.7c8.206,0,14.883-6.677,14.883-14.883v-14.59    c0-8.206-6.677-14.883-14.883-14.883h-7.869V249.102c0-4.143-3.357-7.5-7.5-7.5c-4.143,0-7.5,3.357-7.5,7.5v218.543H360.678    V228.223H496.7C504.906,228.223,511.582,221.546,511.582,213.34z M496.7,497C496.7,497,496.7,497,496.7,497v7.5V497z     M423.573,130.83c2.051,0,3.961,1.014,5.109,2.713l34.031,50.325h-61.898l-66.018-53.038H423.573z M263.5,44.367V18.291    l35.07,13.038L263.5,44.367z M252.138,89.87c0.936-0.753,2.05-1.191,3.194-1.313c0.22,0.02,0.443,0.03,0.669,0.03    s0.448-0.01,0.668-0.03c1.143,0.123,2.258,0.56,3.195,1.313l117.002,93.998h-241.73L252.138,89.87z M83.318,133.543    c1.148-1.699,3.059-2.713,5.109-2.713h88.776l-66.018,53.038H49.287L83.318,133.543z M15.417,213.223v-14.355h135.905v14.355    H15.417z M496.583,497H15.417v-14.355h481.165V497z M304.852,467.645H263.5V363.882h35.288c3.344,0,6.064,2.721,6.064,6.064    V467.645z M248.5,467.645h-41.352v-97.698c0-3.344,2.721-6.064,6.064-6.064H248.5V467.645z M319.852,467.645v-97.698    c0-11.615-9.449-21.064-21.064-21.064h-85.576c-11.615,0-21.064,9.449-21.064,21.064v97.698h-25.825V198.868h179.355v268.777    H319.852z M496.583,213.223H360.678v-14.355h135.905V213.223z"/>
+    	</g>
+    </g>
+    </svg>
+
+    <!-- text class="textb" describing the destination, and positioned in the bottom section of the graphic
+    Events
+        30+
+    -->
+    <g transform="translate(10 110)" fill="#1D2028">
+      <text class="textb" font-size="11" x="-19" y="75" style="text-transform: uppercase; font-weight: 900;   transform: rotate(270deg)scale(0.75,1);">Colleges</text>
+      <text class="textb" fill="#2b3652" x="60" y="9" font-size="44" text-anchor="end" style="font-weight: 900; letter-spacing: -0.05rem;">350</text>
+    </g>
+  </g>
+</svg>
+
+
+
+
+<svg class="svgb" viewBox="0 0 100 130" width="100" height="130">
+  <style>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+
+    text.textb {
+      font-family: 'Adelle Light';
+    }
+  </style>
+  <defs>
+    <!-- pattern used to repeat a circle element on the x dimension -->
+    <pattern id="pattern-x" width="0.1" height="1" viewBox="0 0 10 10">
+      <circle cx="5" cy="0" r="4"></circle>
+    </pattern>
+    <!-- pattern used to repeat a circle element on the y dimension
+    the height is smaller then the width of the previous pattern since the pattern is applied on a larger area
+    -->
+    <pattern id="pattern-y" width="1" height="0.072" viewBox="0 0 10 10">
+      <circle cx="0" cy="5" r="4"></circle>
+    </pattern>
+
+    <!-- mask using the patterns to cut out portions around te 100x150 container -->
+    <mask id="mask-rect">
+      <rect x="0" y="0" width="100" height="130" fill="#fff"></rect>
+      <rect id="x" x="2.5" y="0" width="95" height="8" fill="url(#pattern-x)"></rect>
+      <use href="#x" transform="translate(0 130) scale(1 -1)"></use>
+      <rect id="y" x="0" y="2.5" width="8" height="125" fill="url(#pattern-y)"></rect>
+      <use href="#y" transform="translate(100 0) scale(-1 1)"></use>
+    </mask>
+
+    <!-- linear gradient for the drawing inside the stamp -->
+    <linearGradient id="gradient-rect" x1="0.5" x2="0.5" y1="0" y2="1">
+      <stop stop-color="#5f0f40" offset="0"></stop>
+      <stop stop-color="#240b36" offset="1"></stop>
+    </linearGradient>
+
+    <!-- mask to crop a circle in the center of the postcard
+    userSpaceOnUse means the mask is applied relative to the wrapping svg
+    ! define the circle element to re-use it throughout the project
+    -->
+    <circle id="circle" cx="0" cy="0" r="18"></circle>
+    <mask id="mask-circle" maskUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="100" height="130" fill="#fff"></rect>
+      <use href="#circle" x="50" y="55" fill="#fff"></use>
+    </mask>
+
+    <!-- path used to create the mountains
+    starting from the bottom right corner to scale the shape from that specific point
+    -->
+
+  </defs>
+  <g>
+
+    <!-- group the rectangle and circle elements describing the main features to apply the mask and see the background through
+    -->
+    <g mask="url(#mask-circle)">
+      <!-- include an additional mask on the rectangle used as background, to carve out the edges with the circle pattern -->
+      <rect x="0" y="0" width="100" height="130" fill="#fff" mask="url(#mask-rect)"></rect>
+
+      <!-- add the gradient for the sunshine -->
+      <rect  x="10" y="10" width="80" height="70" fill="url(#gradient-rect)"></rect>
+
+      <!-- on top of the gradient, add multiple instances of the circle, with different fill colors -->
+
+    </g>
+
+    <!-- path elements describing the mountain
+    position the shape in the bottom right corner of the connected rectangle
+    -->
+
+    <!-- snow atop the mountain -->
+    <?xml version="1.0" encoding="iso-8859-1"?>
+    <!-- Generator: Adobe Illustrator 19.0.0, svg class="svgb" Export Plug-In . SVG Version: 6.00 Build 0)  -->
+    <svg class="svgb" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="24px" y="20px"
+    	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="51" height="51">
+    <g>
+    	<g>
+    		<path fill= "white" d="M170.33,357.086l-18.771-9.385c-0.176-0.088-0.285-0.265-0.285-0.462v-11.36c9.72-7.216,16.032-18.775,16.032-31.783
+    			v-16.032c0-17.396-14.152-31.548-31.548-31.548h-16.033c-17.396,0-31.548,14.152-31.548,31.548v16.032
+    			c0,13.008,6.312,24.567,16.032,31.783v11.36c0,0.197-0.109,0.374-0.285,0.462l-18.771,9.385
+    			c-8.024,4.012-13.009,12.077-13.009,21.048v70.988c0,6.25,1.833,12.301,5.299,17.5l7.954,11.931
+    			c1.818,2.728,2.779,5.902,2.779,9.18V504.5c0,4.142,3.358,7.5,7.5,7.5c4.142,0,7.5-3.358,7.5-7.5v-16.767
+    			c0-6.249-1.832-12.3-5.298-17.5l-7.955-11.932c-1.818-2.727-2.779-5.901-2.779-9.179v-70.988c0-3.252,1.808-6.177,4.717-7.632
+    			l13.023-6.511l11.886,11.886c3.025,3.025,6.998,4.538,10.971,4.538c3.974,0,7.947-1.513,10.972-4.538l11.886-11.886l13.023,6.511
+    			c2.909,1.455,4.717,4.379,4.717,7.632v70.988c0,3.278-0.961,6.452-2.779,9.179l-7.955,11.932c-3.466,5.2-5.298,11.251-5.298,17.5
+    			V504.5c0,4.142,3.358,7.5,7.5,7.5c4.142,0,7.5-3.358,7.5-7.5v-16.767c0-3.278,0.961-6.452,2.779-9.18l7.955-11.931
+    			c3.466-5.199,5.299-11.25,5.299-17.5v-70.988C183.339,369.164,178.354,361.098,170.33,357.086z M128.106,365.271
+    			c-0.2,0.2-0.527,0.201-0.729,0l-10.252-10.252c1.339-2.314,2.084-4.977,2.084-7.78v-3.578h17.065v3.578
+    			c0,2.802,0.745,5.466,2.084,7.78L128.106,365.271z M127.742,328.66c-13.545,0-24.564-11.02-24.564-24.564v-16.032h-0.001
+    			c0-9.125,7.423-16.548,16.548-16.548h16.033c9.125,0,16.548,7.423,16.548,16.548v16.032
+    			C152.306,317.641,141.286,328.66,127.742,328.66z"/>
+    	</g>
+    </g>
+    <g>
+    	<g>
+    		<path fill= "white" d="M298.588,357.086l-18.771-9.385c-0.176-0.088-0.285-0.265-0.285-0.462v-11.36c9.72-7.216,16.032-18.775,16.032-31.783
+    			v-16.032c0-17.396-14.152-31.548-31.548-31.548h-16.032c-17.396,0-31.548,14.152-31.548,31.548v16.032
+    			c0,13.008,6.312,24.567,16.032,31.783v11.36c0,0.197-0.109,0.374-0.285,0.462l-18.771,9.385
+    			c-8.024,4.012-13.008,12.077-13.008,21.048v70.988c0,6.25,1.833,12.301,5.299,17.5l7.954,11.932
+    			c1.818,2.728,2.779,5.902,2.779,9.18V504.5c0,4.142,3.358,7.5,7.5,7.5c4.142,0,7.5-3.358,7.5-7.5v-16.767
+    			c0-6.249-1.832-12.3-5.299-17.5l-7.954-11.932c-1.818-2.727-2.779-5.901-2.779-9.179v-70.988c0-3.253,1.807-6.177,4.716-7.632
+    			l13.023-6.511l11.886,11.886c3.025,3.024,6.998,4.537,10.971,4.537c3.973,0,7.947-1.513,10.972-4.537l11.885-11.886l13.023,6.511
+    			c2.909,1.455,4.716,4.379,4.716,7.632v70.988c0,3.278-0.961,6.452-2.779,9.179l-7.954,11.932c-3.467,5.2-5.299,11.251-5.299,17.5
+    			V504.5c0,4.142,3.358,7.5,7.5,7.5c4.142,0,7.5-3.358,7.5-7.5v-16.767c0-3.278,0.961-6.452,2.779-9.18l7.954-11.931
+    			c3.466-5.199,5.299-11.25,5.299-17.5v-70.988C311.597,369.163,306.612,361.098,298.588,357.086z M256.365,365.27
+    			c-0.201,0.202-0.529,0.202-0.73,0.001l-10.251-10.252c1.339-2.314,2.084-4.977,2.084-7.78v-3.578h17.064v3.578
+    			c0,2.802,0.745,5.466,2.084,7.78L256.365,365.27z M256,328.66c-13.544,0-24.564-11.02-24.564-24.564v-16.032
+    			c0-9.125,7.423-16.548,16.548-16.548h16.032c9.125,0,16.548,7.423,16.548,16.548v16.032
+    			C280.564,317.641,269.544,328.66,256,328.66z"/>
+    	</g>
+    </g>
+    <g>
+    	<g>
+    		<path fill= "white" d="M426.846,357.086l-18.771-9.385c-0.176-0.088-0.285-0.265-0.285-0.462v-11.36c9.72-7.216,16.032-18.775,16.032-31.783
+    			v-16.032c0-17.396-14.152-31.548-31.548-31.548h-16.033c-17.396,0-31.548,14.152-31.548,31.548v16.032
+    			c0,13.008,6.312,24.567,16.032,31.783v11.36c0,0.197-0.109,0.374-0.285,0.462l-18.771,9.385
+    			c-8.024,4.012-13.009,12.077-13.009,21.048v70.988c0,6.25,1.833,12.301,5.299,17.5l7.954,11.931
+    			c1.818,2.728,2.779,5.902,2.779,9.18V504.5c0,4.142,3.358,7.5,7.5,7.5c4.142,0,7.5-3.358,7.5-7.5v-16.767
+    			c0-6.249-1.832-12.3-5.298-17.5l-7.955-11.932c-1.818-2.727-2.779-5.901-2.779-9.179v-70.988c0-3.252,1.808-6.177,4.717-7.632
+    			l13.023-6.511l11.886,11.886c3.025,3.025,6.998,4.538,10.972,4.538c3.973,0,7.946-1.513,10.971-4.538l11.886-11.886l13.023,6.511
+    			c2.909,1.455,4.717,4.379,4.717,7.632v70.988c0,3.278-0.961,6.452-2.779,9.179l-7.955,11.932c-3.466,5.2-5.298,11.251-5.298,17.5
+    			V504.5c0,4.142,3.358,7.5,7.5,7.5c4.142,0,7.5-3.358,7.5-7.5v-16.767c0-3.278,0.961-6.452,2.779-9.18l7.955-11.931
+    			c3.466-5.199,5.299-11.25,5.299-17.5v-70.988C439.855,369.164,434.87,361.098,426.846,357.086z M384.622,365.271
+    			c-0.201,0.201-0.529,0.2-0.729,0l-10.252-10.252c1.339-2.314,2.084-4.977,2.084-7.78v-3.578h17.065v3.578
+    			c0,2.802,0.745,5.466,2.084,7.78L384.622,365.271z M384.258,328.66c-13.545,0-24.564-11.02-24.564-24.564v-16.032h-0.001
+    			c0-9.125,7.423-16.548,16.548-16.548h16.033c9.125,0,16.548,7.423,16.548,16.548v16.032
+    			C408.822,317.641,397.802,328.66,384.258,328.66z"/>
+    	</g>
+    </g>
+    <g>
+    	<g>
+    		<path fill= "white" d="M408.678,63.241C367.896,22.459,313.674,0,256,0S144.104,22.459,103.322,63.241
+    			c-40.782,40.782-63.241,95.004-63.241,152.678c0,28.767,5.567,56.704,16.546,83.035c1.594,3.823,5.987,5.629,9.809,4.036
+    			c3.823-1.594,5.63-5.985,4.036-9.809c-9.256-22.199-14.361-45.634-15.239-69.763h57.087c0.067,2.979,0.167,5.954,0.313,8.903
+    			c0.207,4.137,3.74,7.322,7.863,7.118c4.137-0.206,7.324-3.727,7.118-7.863c-0.134-2.702-0.23-5.428-0.295-8.158H248.5v8.532
+    			c0,4.142,3.358,7.5,7.5,7.5c4.142,0,7.5-3.358,7.5-7.5v-8.532h121.181c-0.065,2.734-0.161,5.462-0.295,8.166
+    			c-0.206,4.137,2.98,7.658,7.118,7.864c0.127,0.006,0.253,0.009,0.379,0.009c3.97,0,7.285-3.117,7.484-7.127
+    			c0.147-2.95,0.246-5.929,0.314-8.912h57.087c-0.878,24.133-5.986,47.572-15.245,69.775c-1.594,3.823,0.212,8.214,4.036,9.809
+    			c0.943,0.394,1.921,0.58,2.884,0.58c2.936,0,5.724-1.736,6.925-4.615c10.982-26.335,16.551-54.277,16.551-83.048
+    			C471.919,158.245,449.46,104.023,408.678,63.241z M184.815,28.039c-11.418,9.758-22,21.943-31.453,36.401
+    			c-6.441,9.85-12.172,20.485-17.169,31.753H94.748C117.48,65.657,148.67,41.78,184.815,28.039z M112.321,208.419H55.235
+    			c1.31-35.517,11.875-68.71,29.363-97.226h45.516C119.227,140.73,113.098,173.881,112.321,208.419z M248.5,208.419H127.324
+    			c0.84-35.518,7.611-68.71,18.819-97.226H248.5V208.419z M248.5,96.194h-95.85c22.093-46.307,56.648-77.314,95.85-80.844V96.194z
+    			 M417.252,96.193h-41.445c-4.997-11.267-10.728-21.903-17.169-31.753c-9.457-14.464-20.044-26.649-31.467-36.407
+    			C363.322,41.774,394.517,65.653,417.252,96.193z M263.5,15.35c39.202,3.53,73.757,34.538,95.85,80.844H263.5V15.35z
+    			 M263.5,208.419v-97.226h102.356c11.208,28.516,17.979,61.708,18.819,97.226H263.5z M399.68,208.419
+    			c-0.777-34.538-6.906-67.689-17.793-97.226h45.516c17.487,28.516,28.052,61.709,29.362,97.226H399.68z"/>
+    	</g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    </svg>
+
+    <!-- text describing the destination, and positioned in the bottom section of the graphic
+    Events
+        30+
+    -->
+    <g transform="translate(10 110)" fill="#1D2028">
+      <text class="textb" font-size="14" x="-18" y="79" style="text-transform: uppercase; font-weight: 900;   transform: rotate(270deg)scale(0.75,1);">People</text>
+      <text class="textb" fill="#2b3652" x="66" y="9" font-size="42" text-anchor="end" style="font-weight: 900; letter-spacing: -0.05rem;">70K</text>
+    </g>
+  </g>
+</svg>
+<!-- partial -->
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/TextGeometry.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/FontUtils.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/pnltri.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/droid_sans_bold.typeface.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

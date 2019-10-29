@@ -1,0 +1,260 @@
+div#CC, div#CCC {
+  height:100vh;
+  overflow-y: hidden !important;
+
+}
+
+div#CC{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+        -webkit-tap-highlight-color: transparent;   /* best code to remove _blue highlight */
+          outline: none;
+}
+
+div#CCC {
+  display:flex;
+  font-family: 'Adelle Regular';
+  align-items:center;
+  flex-flow:column nowrap;
+  overflow-x:hidden;
+    height:100vh;
+  background-image: linear-gradient( #5f0f40,#240b36);
+}
+
+#CCC .title {
+
+  letter-spacing:0.5em;
+  margin:4em;
+}
+
+#CCC .gallery {
+  position: relative;
+  -webkit-perspective:700px;
+  perspective:700px;
+  width:50vw;
+  display:flex; justify-content:center; align-items:center; flex-flow:row wrap;
+  transform: translateY(10vh);
+}
+ul.yocc {
+
+  bottom:-80vh;
+  position: absolute;
+  display: inline;
+height: 1em;
+width: 90%; height:100px;
+  margin:0.1em;
+  -webkit-perspective-origin:center center;
+          perspective-origin:center center;
+  -webkit-transform-style:preserve-3d;
+          transform-style:preserve-3d;
+  -webkit-transform:rotateX(40deg);
+          transform:rotateX(40deg);
+  transition:all 0.4s;
+}
+
+ul.yocc.currentCC {
+  transition-delay: 250ms;
+  transition-property: all;
+  -webkit-transform:translateZ(100px) rotateX(0deg) translateY(-40vh);
+          transform:translateZ(100px) rotateX(0deg) translateY(-40vh); z-index:999;
+}
+
+ul.yocc.currentCC li.licc {
+  transition-delay: 250ms;
+  transition-property: all;
+  -webkit-filter:grayscale(0);
+          filter:grayscale(0);
+}
+
+li.licc {
+  position:absolute;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  width:100%; height:100%;
+  transition:-webkit-transform 0.3s, -webkit-filter 1s;
+  transition:transform 0.3s, filter 1s;
+  transition:transform 0.3s, filter 1s, -webkit-transform 0.3s, -webkit-filter 1s;
+  background:coral;
+  -webkit-filter:grayscale(0.9);
+          filter:grayscale(0.9);
+}
+
+/*
+Setup individual planes final poistion(by left top) and initial position(by transform)
+*/
+li.licc:first-of-type {-webkit-transform:none;transform:none;}
+li.licc:nth-of-type(2) {left:100%; -webkit-transform-origin:left center; transform-origin:left center; -webkit-transform:rotateY(180deg); transform:rotateY(180deg);}
+li.licc:nth-of-type(3) {top:100%; -webkit-transform-origin:center top; transform-origin:center top; -webkit-transform:rotateX(-180deg); transform:rotateX(-180deg);}
+li.licc:nth-of-type(4) {left:-100%; -webkit-transform-origin:right center; transform-origin:right center; -webkit-transform:rotateY(-180deg); transform:rotateY(-180deg);}
+li.licc:nth-of-type(5) {top:-100%; -webkit-transform-origin:center bottom; transform-origin:center bottom; -webkit-transform:rotateX(180deg); transform:rotateX(180deg);}
+li.licc:nth-of-type(6) {top:100%; left:100%; -webkit-transform-origin:center top; transform-origin:center top; -webkit-transform:rotateX(-180deg); transform:rotateX(-180deg);}
+li.licc:nth-of-type(7) {top:100%; left:-100%; -webkit-transform-origin:right center; transform-origin:right center; -webkit-transform:rotateY(-180deg); transform:rotateY(-180deg);}
+li.licc:nth-of-type(8) {top:-100%; left:-100%; -webkit-transform-origin:center bottom; transform-origin:center bottom; -webkit-transform:rotateX(180deg); transform:rotateX(180deg);}
+li.licc:nth-of-type(9) {top:-100%; left:100%; -webkit-transform-origin:left center; transform-origin:left center; -webkit-transform:rotateY(180deg); transform:rotateY(180deg);}
+/*
+Setup transition-delay, for mouseout state
+*/
+li.licc:nth-of-type(2),li.licc:nth-of-type(3),li.licc:nth-of-type(4),li.licc:nth-of-type(5) {transition-delay:0.03s;}
+li.licc:nth-of-type(6),li.licc:nth-of-type(7),li.licc:nth-of-type(8),li.licc:nth-of-type(9) {transition-delay:0s;}
+ul.yocc.currentCC :nth-of-type(2),ul.yocc.currentCC :nth-of-type(3),ul.yocc.currentCC :nth-of-type(4),ul.yocc.currentCC :nth-of-type(5) {  transition-delay:0s}
+ul.yocc.currentCC :nth-of-type(6),ul.yocc.currentCC :nth-of-type(7),ul.yocc.currentCC :nth-of-type(8),ul.yocc.currentCC :nth-of-type(9) {  transition-delay:0.2s}
+/*
+Setup planes final state
+*/
+ul.yocc.currentCC :nth-of-type(2),ul.yocc.currentCC :nth-of-type(4),ul.yocc.currentCC :nth-of-type(7),ul.yocc.currentCC :nth-of-type(9) {-webkit-transform:rotateY(0);transform:rotateY(0);}
+ul.yocc.currentCC :nth-of-type(3), ul.yocc.currentCC :nth-of-type(5),ul.yocc.currentCC :nth-of-type(6), ul.yocc.currentCC :nth-of-type(8) {-webkit-transform:rotateX(0);transform:rotateX(0);}
+/*
+Set background position
+*/
+ul.yocc li.licc {background-size:300% 300%;}
+li.licc:nth-of-type(1) {background-position:center center;}
+li.licc:nth-of-type(2) {background-position:right center;}
+li.licc:nth-of-type(3) {background-position:center bottom;}
+li.licc:nth-of-type(4) {background-position:left center;}
+li.licc:nth-of-type(5) {background-position:center top;}
+li.licc:nth-of-type(6) {background-position:right bottom;border-bottom-right-radius: 10px;}
+li.licc:nth-of-type(7) {background-position:left bottom;border-bottom-left-radius: 10px;}
+li.licc:nth-of-type(8) {background-position:left top;border-top-left-radius: 10px;}
+li.licc:nth-of-type(9) {background-position:right top;border-top-right-radius: 10px;}
+/*
+Set background image source
+*/
+/* ul.yocc:nth-of-type(1) li.licc { background-image:url(http://www.upl.co/uploads/194464571a1570131859.jpg);}
+ul.yocc:nth-of-type(1) { width:160px; height:100px; }
+ul.yocc:nth-of-type(2) li.licc { background-image:url(http://www.upl.co/uploads/182711161b1570131859.jpg);}
+ul.yocc:nth-of-type(2) { width:160px; height:100px; }
+ul.yocc:nth-of-type(3) li.licc { background-image:url(http://www.upl.co/uploads/121122951e1570131851.jpg);}
+ul.yocc:nth-of-type(3) { width:160px; height:100px; }
+ul.yocc:nth-of-type(4) li.licc { background-image:url(http://www.upl.co/uploads/194723151d1570131861.jpg);}
+ul.yocc:nth-of-type(4) { width:160px; height:100px; }
+ul.yocc:nth-of-type(5) li.licc { background-image:url(http://www.upl.co/uploads/141261721c1570131849.jpg);}
+ul.yocc:nth-of-type(5) { width:160px; height:100px; }
+ul.yocc:nth-of-type(6) li.licc { background-image:url(http://www.upl.co/uploads/196609441f1570131845.jpg);}
+ul.yocc:nth-of-type(6) { width:160px; height:100px; }
+ul.yocc:nth-of-type(7) li.licc { background-image:url(http://www.upl.co/uploads/151629871i1570131835.jpg);}
+ul.yocc:nth-of-type(7) { width:160px; height:100px; }
+ul.yocc:nth-of-type(8) li.licc { background-image:url(http://www.upl.co/uploads/177353761j1570131835.jpg);}
+ul.yocc:nth-of-type(8) { width:160px; height:100px; }
+ul.yocc:nth-of-type(9) li.licc { background-image:url(http://www.upl.co/uploads/137722661l1570131833.jpg);}
+ul.yocc:nth-of-type(9) { width:160px; height:100px; }
+ul.yocc:nth-of-type(10) li.licc { background-image:url(http://www.upl.co/uploads/146927881k1570131832.jpg);}
+ul.yocc:nth-of-type(10) { width:160px; height:100px; } */
+ul.yocc:nth-of-type(1) li.licc { background-image:url(http://www.upl.co/uploads/197559211g1570136293.jpg);}
+ul.yocc:nth-of-type(1) { width:160px; height:100px; }
+ul.yocc:nth-of-type(2) li.licc { background-image:url(http://www.upl.co/uploads/150511441c1570136294.jpg);}
+ul.yocc:nth-of-type(2) { width:160px; height:100px; }
+ul.yocc:nth-of-type(3) li.licc { background-image:url(http://www.upl.co/uploads/139223051b1570136293.jpg);}
+ul.yocc:nth-of-type(3) { width:160px; height:100px; }
+ul.yocc:nth-of-type(4) li.licc { background-image:url(http://www.upl.co/uploads/179708631h1570136293.jpg);}
+ul.yocc:nth-of-type(4) { width:160px; height:100px; }
+ul.yocc:nth-of-type(5) li.licc { background-image:url(http://www.upl.co/uploads/151741221i1570136292.jpg);}
+ul.yocc:nth-of-type(5) { width:160px; height:100px; }
+ul.yocc:nth-of-type(6) li.licc { background-image:url(http://www.upl.co/uploads/159647591a1570136292.jpg);}
+ul.yocc:nth-of-type(6) { width:160px; height:100px; }
+ul.yocc:nth-of-type(7) li.licc { background-image:url(http://www.upl.co/uploads/176813231d1570136291.jpg);}
+ul.yocc:nth-of-type(7) { width:160px; height:100px; }
+ul.yocc:nth-of-type(8) li.licc { background-image:url(http://www.upl.co/uploads/181905091f1570136291.jpg);}
+ul.yocc:nth-of-type(8) { width:160px; height:100px; }
+ul.yocc:nth-of-type(9) li.licc { background-image:url(http://www.upl.co/uploads/147792921l1570136291.jpg);}
+ul.yocc:nth-of-type(9) { width:160px; height:100px; }
+ul.yocc:nth-of-type(10) li.licc { background-image:url(http://www.upl.co/uploads/190447181e1570136290.jpg);}
+ul.yocc:nth-of-type(10) { width:160px; height:100px; }
+ul.yocc:nth-of-type(11) li.licc { background-image:url(http://www.upl.co/uploads/151615761j1570136290.jpg);}
+ul.yocc:nth-of-type(11) { width:160px; height:100px; }
+ul.yocc:nth-of-type(12) li.licc { background-image:url(http://www.upl.co/uploads/145298941k1570136289.jpg);}
+ul.yocc:nth-of-type(12) { width:160px; height:100px; }
+
+li.licc { text-indent:999px; overflow:hidden; }
+
+.slideCC {
+
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+
+}
+.slideCC.currentCC {
+opacity: 1;
+}
+.buttonsCC button#nextCC {
+  position: absolute;
+  top: 40%;
+  right: 15px;
+}
+.buttonsCC button#prevCC {
+  transform: rotate(180deg);
+  position: absolute;
+  top: 40%;
+  left: 15px;
+}
+.buttonsCC button {
+  border: 2px solid transparent;
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttonsCC button svg:hover {
+    fill: #fff;
+}
+@media screen and (min-width:767px){
+
+.buttonsCC button#prevCC {
+  left:100px !important;
+}
+.buttonsCC button#nextCC {
+  right:100px !important;
+}
+}
+/* retrohCCHHH */
+
+h1.retrohCC {
+  font-family: 'Vintage Warehouse';
+  text-transform: uppercase;
+  font-size: 76px;
+  text-align: center;
+  line-height: 1;
+  font-weight: normal;
+  margin: 0;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  color: rgba(255,255,255,0.9);
+
+  }
+
+
+h1.retrohCC:focus {
+  outline: none;
+}
+
+@font-face {font-family:"Vintage Warehouse";src:url("./fonts/Vintage_Warehouse.eot?") format("eot"),url("./fonts/Vintage_Warehouse.woff") format("woff"),url("./fonts/Vintage_Warehouse.ttf") format("truetype"),url("./fonts/Vintage_Warehouse.svg#VintageWarehouse") format("svg");font-weight:normal;font-style:normal;}
+
+@media screen and (max-width:767px){
+  h1.retrohCC{
+    font-size: 48px;
+  }
+  @media screen and (max-width:467px){
+    h1.retrohCC{
+      font-size: 40px;
+    }
+  #CCC .gallery {
+    zoom:0.7;
+    transform: translateY(20vh);
+  }
+  ul.yocc{
+    transform: translateY(20vh);
+  }
+}
